@@ -1,15 +1,20 @@
-# 🎓 Slow Learner AI System
+# AI System to Identify and Support Slow Learners
 
-AI-powered platform to identify slow learners and help them crack minimum package jobs through personalized skill development.
+This project helps college students:
 
-## 🚀 Quick Start
+- Track academic performance  
+- Analyze skill gaps  
+- Generate learning roadmaps for target jobs  
+- Provide guidance to crack minimum‑package jobs  
 
-```bash
-# Backend (Flask)
-cd backend && pip install -r requirements.txt && python app.py
+## 🏗️ Folder structure
 
-# Node Auth Server
-cd node-server && npm install && node index.js
+- `backend/`          → Flask backend  
+- `node-server/`      → Node.js auth server  
+- `frontend/`         → React frontend  
+- `docs/`             → architecture + API docs  
 
-# Frontend (React)
-cd frontend && npm install && npm start
+## 🚀 How to run
+
+1. Clone the repo  
+2. Run backend, node-server, and frontend in separate terminals  
