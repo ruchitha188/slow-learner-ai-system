@@ -1,1 +1,23 @@
+.page {
+  padding: 40px 0;
+}
+
+.page form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.page input {
+  margin: 8px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error {
+  color: red;
+  margin: 8px 0;
+}
 
