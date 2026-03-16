@@ -1,23 +1,26 @@
-.page {
-  padding: 40px 0;
+.login-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #10b981 100%);
+  display: flex; align-items: center; justify-content: center; padding: 24px;
 }
-
-.page form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: 20px auto;
+.login-card {
+  background: white; border-radius: 20px; padding: 40px;
+  width: 100%; max-width: 420px; box-shadow: 0 24px 64px rgba(0,0,0,0.2);
 }
-
-.page input {
-  margin: 8px 0;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.login-header { text-align: center; margin-bottom: 28px; }
+.login-logo { font-size: 48px; margin-bottom: 8px; }
+.login-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+.login-title span { color: var(--primary); }
+.login-subtitle { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+.login-tabs {
+  display: flex; gap: 4px; background: var(--bg);
+  padding: 4px; border-radius: 10px; margin-bottom: 24px;
 }
-
-.error {
-  color: red;
-  margin: 8px 0;
+.tab-btn {
+  flex: 1; padding: 10px; border: none; border-radius: 8px;
+  font-family: "Outfit", sans-serif; font-size: 15px; font-weight: 600;
+  cursor: pointer; background: transparent; color: var(--text-muted); transition: all 0.2s;
 }
-
+.tab-btn.active { background: white; color: var(--primary); box-shadow: var(--shadow-sm); }
+.full-width { width: 100%; justify-content: center; padding: 12px; font-size: 16px; margin-top: 4px; }
+.login-footer { text-align: center; margin-top: 24px; font-size: 12px; color: #94a3b8; }
