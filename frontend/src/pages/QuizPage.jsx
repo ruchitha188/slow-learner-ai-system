@@ -21,7 +21,7 @@ function QuizPage() {
     const fetchQuiz = async () => {
       setError(""); setQuiz(null); setSubmitted(false); setScore(0);
       try {
-        const res = await axios.get(`http://localhost:5000/api/quiz/${quizId}`);
+        const res = await axios.get(`/api/quiz/${quizId}`);
         setQuiz(res.data.questions);
         setAnswers(new Array(res.data.questions.length).fill(null));
       } catch (err) { setError("Failed to load quiz. Is the backend running?"); }
