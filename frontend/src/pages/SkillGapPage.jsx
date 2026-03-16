@@ -22,7 +22,7 @@ function SkillGapPage() {
     setError(""); setGap(null); setLoading(true);
     try {
       const skillList = skills.split(",").map(s => s.trim()).filter(s => s.length > 0);
-      const res = await axios.post("http://localhost:5000/api/analysis/gap", { roll, skills: skillList, job });
+      const res = await axios.post("/api/analysis/gap", { roll, skills: skillList, job });
       setGap(res.data.gap);
     } catch (err) {
       setError(err.response?.data?.error || "Failed to analyze. Is the backend running?");
