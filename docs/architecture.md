@@ -1,23 +1,19 @@
 # System Architecture
 
-## Overview
-This project is a **three‑part stack**:
+| Part | Tech | Port |
+|------|------|------|
+| Frontend | React.js | 3000 |
+| Backend API | Python Flask | 5000 |
+| Auth Server | Node.js + JWT | 3001 |
 
-- **Frontend**: React app for UI (login, dashboard, skill gap, roadmap, quiz).
-- **Python backend**: Flask server for student data, skill‑gap analysis, and roadmaps.
-- **Node.js server**: Handles authentication (JWT login/register).
+## Flow
+- User logs in → Node.js auth → gets JWT token
+- Dashboard → Flask backend → student data
+- Skill Gap → Flask /api/analysis/gap
+- Roadmap → Flask /api/roadmap/:job
+- Quiz → Flask /api/quiz/:quiz_id
 
-## Data flow
-
-1. **Frontend** → **Node auth**:
-   - Students log in or register → receive a JWT token.
-
-2. **Frontend** → **Flask backend**:
-   - Get/analyze student performance → generate skill‑gap score.
-   - Fetch job‑based learning roadmap.
-   - Take quizzes and submit answers.
-
-3. **Flask backend** → itself:
-   - Store student scores and skills (in‑memory).
-   - Run simple rule‑based skill‑gap analysis (can be upgraded with ML later).
-
+## Student Classification
+- Score < 40 → slow_learner
+- Score 40–60 → average
+- Score > 60 → fast_learner
