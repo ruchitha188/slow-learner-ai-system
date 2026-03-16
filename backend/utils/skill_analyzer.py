@@ -1,5 +1,4 @@
 def analyze_skill_gap(current_skills, target_job):
-    # Dummy mapping; you can expand later
     required_skills = {
         "web_developer": {"html", "css", "javascript", "react", "git"},
         "data_analyst": {"python", "pandas", "sql", "matplotlib"},
@@ -7,14 +6,24 @@ def analyze_skill_gap(current_skills, target_job):
     }
 
     req = required_skills.get(target_job.lower(), set())
-    current = set(s.lower() for s in current_skills)
 
-    missing = req - current
-    extra = current - req
+    if not req:
+        return {
+            "error": f"Unknown job: {target_job}",
+            "missing": [],
+            "extra": [],
+            "percent_complete": 0
+        }
+
+    current = set(s.lower().strip() for s in current_skills)
+    missing = list(req - current)
+    extra = list(current - req)
+    matched = list(current & req)
+    percent = int(100 * len(matched) / len(req)) if req else 0
 
     return {
-        "missing": list(missing),
-        "extra": list(extra),
-        "percent_complete": int(100 * len(current & req) / len(req)) if req else 0
+        "missing": missing,
+        "extra": extra,
+        "matched": matched,
+        "percent_complete": percent
     }
-
