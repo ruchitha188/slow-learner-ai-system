@@ -1,1 +1,23 @@
+.quiz-page {
+  padding: 20px;
+}
+
+.question-block {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.option {
+  margin: 6px 0;
+}
+
+.quiz-result {
+  margin-top: 20px;
+  padding: 16px;
+  background: #e6ffe6;
+  border-radius: 8px;
+}
 
