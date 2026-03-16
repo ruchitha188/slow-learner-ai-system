@@ -20,7 +20,7 @@ function RoadmapPage() {
     const fetchRoadmap = async () => {
       setError(""); setLoading(true); setRoadmap(null); setCompleted({});
       try {
-        const res = await axios.get(`http://localhost:5000/api/roadmap/${job}`);
+        const res = await axios.get(`/api/roadmap/${job}`);
         setRoadmap(res.data.roadmap);
       } catch (err) {
         setError(err.response?.data?.error || "Failed to load roadmap. Is the backend running?");
