@@ -19,7 +19,7 @@ function LoginPage() {
     setMessage({ text: "", type: "" });
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3001/api/auth/login", {
+      const res = await axios.post(""/api/auth/login"", {
         email: loginEmail, password: loginPassword,
       });
       localStorage.setItem("token", res.data.token);
