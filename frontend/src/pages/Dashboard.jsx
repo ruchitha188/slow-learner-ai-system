@@ -18,7 +18,7 @@ function Dashboard() {
   const handleRegister = async (e) => {
     e.preventDefault(); setRegMsg({ text: "", type: "" }); setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/students/register", { roll, name, email });
+      await axios.post("/api/students/register", { roll, name, email });
       setRegMsg({ text: `✅ Student "${name}" registered!`, type: "success" });
       setRoll(""); setName(""); setEmail("");
     } catch (err) { setRegMsg({ text: err.response?.data?.error || "Failed", type: "error" }); }
@@ -28,7 +28,7 @@ function Dashboard() {
   const handleAddScore = async (e) => {
     e.preventDefault(); setScoreMsg({ text: "", type: "" }); setClassification(null); setLoading(true);
     try {
-      const res = await axios.post(`http://localhost:5000/api/students/${scoreRoll}/score`, { subject, score: Number(score) });
+      const res = await axios.post(`/api/students/${scoreRoll}/score`, { subject, score: Number(score) });
       setClassification(res.data);
       setScoreMsg({ text: `✅ Score added! Avg: ${res.data.average}`, type: "success" });
       setSubject(""); setScore("");
@@ -39,7 +39,7 @@ function Dashboard() {
   const handleViewStudent = async (e) => {
     e.preventDefault(); setViewMsg(""); setStudentData(null);
     try {
-      const res = await axios.get(`http://localhost:5000/api/students/${viewRoll}`);
+      const res = await axios.get(`/api/students/${viewRoll}`);
       setStudentData(res.data);
     } catch (err) { setViewMsg(err.response?.data?.error || "Student not found"); }
   };
