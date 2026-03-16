@@ -6,6 +6,9 @@ __pycache__/
 .DS_Store
 .env
 .env.local
+*.db
+venv/
+env/
 
 # Node
 node_modules/
@@ -15,3 +18,4 @@ yarn-error.log*
 out
 build
 dist
+package-lock.json
