@@ -1,1 +1,13 @@
+.roadmap-page {
+  padding: 20px;
+}
+
+.roadmap-list ol {
+  padding-left: 20px;
+}
+
+.roadmap-list li {
+  margin-bottom: 8px;
+  color: #333;
+}
 
