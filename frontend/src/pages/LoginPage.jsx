@@ -35,7 +35,7 @@ function LoginPage() {
     setMessage({ text: "", type: "" });
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3001/api/auth/register", {
+      const res = await axios.post(""/api/auth/register"", {
         name: regName, email: regEmail, password: regPassword,
       });
       localStorage.setItem("token", res.data.token);
